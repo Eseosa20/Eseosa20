@@ -1,4 +1,7 @@
-## Hi there 👋
+##TryHackMe Badge
+
+https://tryhackme.com/Eseosa20/badges/terminaled
+
 
 <!--
 **Eseosa20/Eseosa20** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
