@@ -1,19 +1,18 @@
-##TryHackMe Badge
+name: Update TryHackMe Badge
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight UTC
+  workflow_dispatch: # Allows manual triggering
 
-https://tryhackme.com/Eseosa20/badges/terminaled
+jobs:
+  update-badge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-
-<!--
-**Eseosa20/Eseosa20** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+      - name: Fetch TryHackMe Badge
+        uses: p4p1/tryhackme-badge-workflow@main
+        with:
+          username: "Eseosa20" # Replace with your TryHackMe username
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Automatically uses your GitHub token
